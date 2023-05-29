@@ -23,11 +23,6 @@ namespace HomeWork5_24Context.Data
             using var context = new CandidateDataContext(_connectionString);
             return context.candidates.Where(c => c.Status == status).ToList();
         }
-        public List<Candidate> GetConfirmedAndRefused(Status status)
-        {
-            using var context = new CandidateDataContext(_connectionString);
-            return context.candidates.Where(c => c.Status == status).ToList();
-        }
         public Candidate GetById(int id)
         {
             using var context = new CandidateDataContext(_connectionString);
@@ -42,5 +37,11 @@ namespace HomeWork5_24Context.Data
             context.candidates.Update(candidate);
             context.SaveChanges();
         }
+        public int GetCount(Status status)
+        {
+            using var context = new CandidateDataContext(_connectionString);
+            return context.candidates.Where(c => c.Status == status).ToList().Count();
+        }
+
     }
 }

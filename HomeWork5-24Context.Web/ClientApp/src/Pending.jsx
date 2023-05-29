@@ -57,7 +57,7 @@ const Pending = () => {
                             </td>
                             <td>
                                 {candidate.email}
-                            </td>                          
+                            </td>
                         </tr>
                     )}
                 </tbody>

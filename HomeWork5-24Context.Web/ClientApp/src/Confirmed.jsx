@@ -4,10 +4,6 @@ import { useCandidateCount } from './CandidateContext';
 
 
 
-
-
-
-
 const Confirmed = () => {
     const { refreshConfirmedCount } = useCandidateCount();
     const [candidates, setCandidates] = useState([]);
@@ -24,7 +20,7 @@ const Confirmed = () => {
     }, []);
 
     const onToggleClick = () => {
-        setNotesDisplay(!showNotes);        
+        setNotesDisplay(!showNotes);
     }
 
 
@@ -33,45 +29,45 @@ const Confirmed = () => {
             <div>
                 <h1>Confirmed</h1>
 
-                    <button className="btn btn-success" onClick={onToggleClick}>Toggle Notes</button>
+                <button className="btn btn-success" onClick={onToggleClick}>Toggle Notes</button>
 
-                    <table className="table text-center shadow-lg" style={{ borderCollapse: 'separate', borderSpacing: '0px 15px', maxWidth: '80%' }}>
+                <table className="table text-center shadow-lg" style={{ borderCollapse: 'separate', borderSpacing: '0px 15px', maxWidth: '80%' }}>
 
-                        <thead>
-                            <tr style={{ backgroundColor: 'rgb(33, 37, 41)', color: 'white', borderRadius: '15px' }}>
+                    <thead>
+                        <tr style={{ backgroundColor: 'rgb(33, 37, 41)', color: 'white', borderRadius: '15px' }}>
 
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
                             {showNotes ? <th> Notes</th> : ''}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {candidates.map(candidate =>
-                                <tr
-                                    style={{ backgroundColor: 'rgb(248, 249, 250)', borderRadius: '15px' }}
-                                    key={candidate.id}>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {candidates.map(candidate =>
+                            <tr
+                                style={{ backgroundColor: 'rgb(248, 249, 250)', borderRadius: '15px' }}
+                                key={candidate.id}>
 
-                                    <td>
-                                        {candidate.firstName}
-                                    </td>
-                                    <td>
-                                        {candidate.lastName}
-                                    </td>
-                                    <td>
-                                        {candidate.phoneNumber}
-                                    </td>
-                                    <td>
-                                        {candidate.email}
-                                    </td>
-                                    {showNotes ? <td> {candidate.notes}</td> : ''}
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
-                </div>
+                                <td>
+                                    {candidate.firstName}
+                                </td>
+                                <td>
+                                    {candidate.lastName}
+                                </td>
+                                <td>
+                                    {candidate.phoneNumber}
+                                </td>
+                                <td>
+                                    {candidate.email}
+                                </td>
+                                {showNotes ? <td> {candidate.notes}</td> : ''}
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
             </div>
+        </div>
     );
 }
 

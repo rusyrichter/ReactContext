@@ -38,7 +38,7 @@ namespace HomeWork5_24Context.Web.Controllers
         public List<Candidate> GetConfirmed()
         {
             var repo = new CandidateRepository(_connectionString);
-            return (repo.GetConfirmedAndRefused(Status.Confirmed));
+            return (repo.GetStatus(Status.Confirmed));
         }
         [HttpGet]
         [Route("getRefused")]
@@ -46,7 +46,7 @@ namespace HomeWork5_24Context.Web.Controllers
         public List<Candidate> GetRefused()
         {
             var repo = new CandidateRepository(_connectionString);
-            return (repo.GetConfirmedAndRefused(Status.Refused));
+            return (repo.GetStatus(Status.Refused));
         }
         [HttpGet]
         [Route("getCandidateById")]
@@ -96,5 +96,6 @@ namespace HomeWork5_24Context.Web.Controllers
             var repo = new CandidateRepository(_connectionString);
             return new { count = repo.GetStatus(Status.Refused).Count };
         }
+       
     }
 }

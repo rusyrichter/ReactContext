@@ -27,10 +27,10 @@ const AddCandidate = () => {
                     <div className="card card-body bg-light">
                         <h4>Add Candidate</h4>
                         <form>
-                            <input value={firstName} type="text" name="firstName" placeholder="First Name" className="form-control" onChange={e => setFN (e.target.value)} /><br />
-                            <input value={lastName}type="text" name="lastName" placeholder="Last Name" className="form-control" onChange={e => setLN(e.target.value)} /><br />
-                            <input value={email}type="text" name="email" placeholder="Email" className="form-control" onChange={e => setEmail(e.target.value)} /><br />
-                            <input value={phoneNumber}type="text" name="phoneNumber" placeholder="Phone Number" className="form-control" onChange={e => setPhoneNumber(e.target.value)} /><br />
+                            <input value={firstName} type="text" name="firstName" placeholder="First Name" className="form-control" onChange={e => setFN(e.target.value)} /><br />
+                            <input value={lastName} type="text" name="lastName" placeholder="Last Name" className="form-control" onChange={e => setLN(e.target.value)} /><br />
+                            <input value={email} type="text" name="email" placeholder="Email" className="form-control" onChange={e => setEmail(e.target.value)} /><br />
+                            <input value={phoneNumber} type="text" name="phoneNumber" placeholder="Phone Number" className="form-control" onChange={e => setPhoneNumber(e.target.value)} /><br />
                             <textarea
                                 value={notes} rows="5" className="form-control" name="notes" onChange={e => setNotes(e.target.value)}>
                             </textarea>

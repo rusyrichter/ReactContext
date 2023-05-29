@@ -4,10 +4,10 @@ import axios from 'axios';
 import { useCandidateCount } from './CandidateContext';
 
 
-const OrderDetails = () => {
+const ViewDetails = () => {
     const [candidate, setCandidate] = useState([]);
     const { id } = useParams();
-    const { refreshConfirmedCount, refreshRefusedCount, refreshPendingCounts } = useCandidateCount();
+    const {refreshPendingCounts } = useCandidateCount();
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -19,7 +19,7 @@ const OrderDetails = () => {
 
     }, []);
 
-    const onConfirmClick = async () => {      
+    const onConfirmClick = async () => {
         await axios.post('/api/candidate/addToConfirmed', { id });
         refreshPendingCounts();
         navigate('/confirmed');
@@ -53,8 +53,7 @@ const OrderDetails = () => {
     );
 }
 
-export default OrderDetails;
-
+export default ViewDetails;
 
 
 
